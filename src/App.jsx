@@ -1,12 +1,16 @@
-import Hero from "./components/Hero"
+import AboutSection from "./components/AboutSection"
+import HeroSection from "./components/HeroSection"
 import Navigation from "./components/Navigation"
+import PopularSection from "./components/PopularSection"
 
 const App = () => {
 
   return (
     <div className="App">
       <Navigation />
-      <Hero />
+      <HeroSection id="home" />
+      {/* <AboutSection id="about" /> */}
+      {/* <PopularSection id="popular" /> */}
     </div>
   )
 }

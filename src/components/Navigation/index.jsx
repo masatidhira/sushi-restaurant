@@ -11,29 +11,34 @@ const Navigation = () => {
                 </Logo>
                 <NavItemContainer>
                     <NavItem>
-                        <A href="#">Home</A>
+                        <A href="#home">Home</A>
                     </NavItem>
                     <NavItem>
-                        <A href="#">About Us</A>
+                        <A href="#about">About Us</A>
                     </NavItem>
                     <NavItem>
-                        <A href="#">Popular</A>
+                        <A href="#popular">Popular</A>
                     </NavItem>
                     <NavItem>
-                        <A href="#">Recently</A>
+                        <A href="#recently">Recently</A>
                     </NavItem>
                     <NavItem>
                         <A href="#">Moon</A>
                     </NavItem>
                 </NavItemContainer>
+                <NavMobileMenu>
+                    <span>M E</span>
+                    <span>N U</span>
+                </NavMobileMenu>
             </NavContainer>
         </Header>
     )
 }
 
 const Header = styled.header`
+    background-color: var(--clr-light);
     width: 100%;
-    height: 3rem;
+    height: var(--nav-height);
     position: fixed;
     top: 0;
     left: 0;
@@ -64,7 +69,23 @@ const LogoImage = styled.img`
 `
 
 const NavItemContainer = styled.ul`
+    display: none;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+`
+
+const NavMobileMenu = styled.button`
+    background: none;
+    border: none;
+    font-size: 0.7rem;
     display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 `
 
 const NavItem = styled.li`
