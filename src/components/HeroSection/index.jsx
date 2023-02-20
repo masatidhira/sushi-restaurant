@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import sushiRolls from "../../assets/images/home-sushi-rolls.png"
 import sushiTitle from "../../assets/images/home-sushi-title.png"
+import {Container as MainContainer, Button, Image} from "../../globalStyles"
 
 const HeroSection = ({id}) => {
     return (
@@ -22,15 +23,10 @@ const HeroSection = ({id}) => {
     )
 }
 
-export const Container = styled.section`
-    width: 100%;
+const Container = styled(MainContainer)`
     height: 100vh;
-    max-width: 1080px;
-    margin: auto;
-    padding-top: calc(var(--nav-height)*2);
     display: flex;
     flex-direction: column;
-    position: relative;
 
     @media (min-width: 768px) {
         padding-top: 0;
@@ -50,6 +46,7 @@ const Heading = styled.div`
 const H1 = styled.h1`
     display: flex;
     align-items: center;
+    font-family: var(--font-heading);
     font-size: clamp(2.2rem, 7vw, 4rem);
     letter-spacing: 1px;
 `
@@ -67,18 +64,12 @@ const Subheading = styled.p`
     margin-bottom: 0.8rem;
 `
 
-const OrderButton = styled.button`
-    background-color: #fcc14f;
-    color: var(--clr-light);
-    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
-    padding: 0.6rem 0.5rem;
-    border: none;
-    border-radius: 5rem;
-`
+const OrderButton = styled(Button)``
 
-export const ImageContainer = styled.div`
+const ImageContainer = styled.div`
     width: 100%;
     height: 50vh;
+    padding-left: 2rem;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -89,18 +80,17 @@ export const ImageContainer = styled.div`
     @media (min-width: 768px) {
         width: 60%;
         height: 100vh;
+        padding-left: 0;
+        padding-right: 2rem;
         bottom: unset;
         top: 0;
-        padding-right: 2rem;
         transform: translateY(0);
     }
 `
 
-export const Img = styled.img`
+const Img = styled(Image)`
     width: 120%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
     
     @media (min-width: 768px) {
         width: 100%;
