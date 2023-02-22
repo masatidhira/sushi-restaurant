@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import onigiri from "../../assets/images/popular-onigiri.png"
-import springRoll from "../../assets/images/popular-spring-rols.png"
-import sushiRoll from "../../assets/images/popular-sushi-rolls.png"
-import {Container as MainContainer, Title, Tagline, Image} from "../../globalStyles"
+import onigiri from "../../../assets/images/popular-onigiri.png"
+import springRoll from "../../../assets/images/popular-spring-rols.png"
+import sushiRoll from "../../../assets/images/popular-sushi-rolls.png"
+import {Container as MainContainer, Title, Tagline, Image} from "../../../globalStyles"
 
-const PopularSection = ({id}) => {
+const Popular = ({id}) => {
     const popularData = [
         {name: "Onigiri", desc: "Japanese Dish", price: "$10.99", img: onigiri},
         {name: "Spring Roll", desc: "Japanese Dish", price: "$10.99", img: springRoll},
@@ -95,4 +95,4 @@ const MenuPrice = styled.p`
 const BuyButton = styled.button``
 
 
-export default PopularSection
+export default Popular;

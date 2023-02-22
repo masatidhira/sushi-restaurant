@@ -10,10 +10,27 @@ const GlobalStyle = createGlobalStyle`
 
 export const Container = styled.section`
     width: 100%;
-    max-width: 1080px;
     margin: auto;
     padding-top: calc(var(--nav-height)*2);
     position: relative;
+`
+
+export const ImageContainer = styled.div`
+    width: 100%;
+    max-width: 400px;
+`
+
+export const Image = styled.img`
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+`
+
+export const TextContainer = styled.div`
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
 `
 
 export const Title = styled.h3`
@@ -32,20 +49,20 @@ export const Tagline = styled.p`
     font-size: clamp(2rem, 5vw, 2.4rem);
 `
 
+export const Text = styled.p`
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+`
+
 export const Button = styled.button`
     background-color: #fcc14f;
     color: var(--clr-light);
+    width: fit-content;
     font-size: clamp(0.75rem, 2.5vw, 0.9rem);
     padding: 0.9em;
     border: none;
     border-radius: 5rem;
     cursor: pointer;
-`
-
-export const Image = styled.img`
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
 `
 
 export default GlobalStyle;

@@ -4,6 +4,8 @@
 
 :root {
   --nav-height: 3rem;
+  --max-width: 1080px;
+
   --clr-dark: #2b2b2b;
   --clr-light: #f1e5dd;
 

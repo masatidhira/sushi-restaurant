@@ -1,8 +1,6 @@
 import GlobalStyle from "./globalStyles"
-import AboutSection from "./components/AboutSection"
-import HeroSection from "./components/HeroSection"
 import Navigation from "./components/Navigation"
-import PopularSection from "./components/PopularSection"
+import Homepage from "./pages/Homepage"
 
 const App = () => {
 
@@ -10,9 +8,7 @@ const App = () => {
     <div className="App">
       <GlobalStyle />
       <Navigation />
-      <HeroSection id="home" />
-      <AboutSection id="about" />
-      <PopularSection id="popular" />
+      <Homepage />
     </div>
   )
 }

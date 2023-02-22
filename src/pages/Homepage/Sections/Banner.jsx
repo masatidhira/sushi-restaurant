@@ -1,9 +1,10 @@
 import styled from "styled-components"
-import sushiRolls from "../../assets/images/home-sushi-rolls.png"
-import sushiTitle from "../../assets/images/home-sushi-title.png"
-import {Container as MainContainer, Button, Image} from "../../globalStyles"
+import {HiOutlineArrowSmRight} from "react-icons/hi"
+import sushiRolls from "../../../assets/images/home-sushi-rolls.png"
+import sushiTitle from "../../../assets/images/home-sushi-title.png"
+import {Container as MainContainer, Button, Image} from "../../../globalStyles"
 
-const HeroSection = ({id}) => {
+const Banner = ({id}) => {
     return (
         <Container id={id}>
             <HeadingContainer>
@@ -14,7 +15,7 @@ const HeroSection = ({id}) => {
                 <Subheading>
                     Enjoy a good dinner with the best <br />dishes in the restaurant and improve <br />your day.
                 </Subheading>
-                <OrderButton>Order Now</OrderButton>
+                <OrderButton>Order Now <HiOutlineArrowSmRight/></OrderButton>
             </HeadingContainer>
             <ImageContainer>
                 <Img src={sushiRolls} alt="Sushi rolls" />
@@ -35,7 +36,6 @@ const Container = styled(MainContainer)`
 `
 
 const HeadingContainer = styled.div`
-    padding: 0 2rem;
     z-index: 2;
 `
 
@@ -47,12 +47,12 @@ const H1 = styled.h1`
     display: flex;
     align-items: center;
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 7vw, 4rem);
+    font-size: clamp(2.2rem, 6vw, 4rem);
     letter-spacing: 1px;
 `
 
 const HeadingImage = styled.img`
-    width: clamp(3.2rem, 10vw, 4rem);
+    width: clamp(3rem, 8vw, 4rem);
     margin-right: 0.6rem;
     object-fit: contain;
     object-position: center;
@@ -69,10 +69,9 @@ const OrderButton = styled(Button)``
 const ImageContainer = styled.div`
     width: 100%;
     height: 50vh;
-    padding-left: 2rem;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -2rem;
     overflow: hidden;
     transform: translateY(-10%);
     z-index: 1;
@@ -80,10 +79,9 @@ const ImageContainer = styled.div`
     @media (min-width: 768px) {
         width: 60%;
         height: 100vh;
-        padding-left: 0;
-        padding-right: 2rem;
         bottom: unset;
         top: 0;
+        right: 0;
         transform: translateY(0);
     }
 `
@@ -97,4 +95,4 @@ const Img = styled(Image)`
     }
 `
 
-export default HeroSection
+export default Banner
