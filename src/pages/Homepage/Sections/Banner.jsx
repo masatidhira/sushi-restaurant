@@ -1,24 +1,31 @@
 import styled from "styled-components"
-import {HiOutlineArrowSmRight} from "react-icons/hi"
-import sushiRolls from "../../../assets/images/home-sushi-rolls.png"
-import sushiTitle from "../../../assets/images/home-sushi-title.png"
-import {Container as MainContainer, Button, Image} from "../../../globalStyles"
+import {ArrowRight} from "styled-icons/bootstrap"
+import {Container as MainContainer, Image, Button} from "../../../globalStyles"
+import {BannerData as data} from "../Data"
 
 const Banner = ({id}) => {
     return (
         <Container id={id}>
             <HeadingContainer>
                 <Heading>
-                    <H1>Enjoy Delicious</H1>
-                    <H1><HeadingImage src={sushiTitle} />Sushi Food</H1>
+                    <H1>{data.headingText[0]}</H1>
+                    <H1>
+                        <HeadingImage src={data.headingImage} alt="sushi" />
+                        {data.headingText[1]}
+                    </H1>
                 </Heading>
                 <Subheading>
-                    Enjoy a good dinner with the best <br />dishes in the restaurant and improve <br />your day.
+                    {data.subheadingText[0]}<br />
+                    {data.subheadingText[1]}<br />
+                    {data.subheadingText[2]}
                 </Subheading>
-                <OrderButton>Order Now <HiOutlineArrowSmRight/></OrderButton>
+                <OrderButton>
+                    <span>Order Now</span>
+                    <ArrowIcon />
+                </OrderButton>
             </HeadingContainer>
             <ImageContainer>
-                <Img src={sushiRolls} alt="Sushi rolls" />
+                <Img src={data.bannerImage} alt="Sushi rolls" />
             </ImageContainer>
         </Container>
     )
@@ -64,8 +71,6 @@ const Subheading = styled.p`
     margin-bottom: 0.8rem;
 `
 
-const OrderButton = styled(Button)``
-
 const ImageContainer = styled.div`
     width: 100%;
     height: 50vh;
@@ -93,6 +98,12 @@ const Img = styled(Image)`
     @media (min-width: 768px) {
         width: 100%;
     }
+`
+
+export const OrderButton = styled(Button)``
+
+export const ArrowIcon = styled(ArrowRight)`
+    width: 1rem;
 `
 
 export default Banner

@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import sushi from "../../../assets/images/about-sushi.png"
-import sushiTitle from "../../../assets/images/about-sushi-title.png"
 import {Container as MainContainer,
         TextContainer,
         Title,
@@ -10,20 +8,24 @@ import {Container as MainContainer,
         Image,
         ImageContainer
         } from "../../../globalStyles"
+import {AboutData as data} from "../Data"
 
 const About = ({id}) => {
     return (
         <Container id={id}>
             <ImageContainer>
-                <Image src={sushi} alt="Sushi" />
+                <Image src={data.image} alt="Sushi" />
             </ImageContainer>
             <TextContainer>
-                <Title>About Us</Title>
+                <Title>{data.title}</Title>
                 <TaglineContainer>
-                    <Tagline>We Provide <TaglineImage src={sushiTitle} alt="sushi" /></Tagline>
-                    <Tagline>Healthy Food</Tagline>
+                    <Tagline>
+                        {data.tagline[0]}
+                        <TaglineImage src={data.taglineImage} alt="sushi" />
+                    </Tagline>
+                    <Tagline>{data.tagline[1]}</Tagline>
                 </TaglineContainer>
-                <Text>Food comes to us from our relatives, whether they have wings or roots. This is how we consider food, it also have a culture, it has a history that passes from generation to generation.</Text>
+                <Text>{data.text}</Text>
             </TextContainer>
         </Container>
     )

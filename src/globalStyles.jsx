@@ -55,9 +55,12 @@ export const Text = styled.p`
 `
 
 export const Button = styled.button`
-    background-color: #fcc14f;
+    background-color: var(--clr-button);
     color: var(--clr-light);
     width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
     font-size: clamp(0.75rem, 2.5vw, 0.9rem);
     padding: 0.9em;
     border: none;

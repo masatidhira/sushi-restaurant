@@ -7,10 +7,9 @@ import {Container as MainContainer,
         Tagline, 
         Text,
         ImageContainer,
-        Image, 
-        Button 
+        Image,
     } from "../../../globalStyles"
-
+import {ArrowIcon, OrderButton} from "./Banner"
 
 const Recently = ({ id }) => {
     return (
@@ -22,7 +21,10 @@ const Recently = ({ id }) => {
                     <Tagline>Salmon Cheese</Tagline>
                 </TaglineContainer>
                 <Text>Take a look at what's new. And do not depress yourself of a good meal, enjoy and be happy.</Text>
-                <Button>Order now</Button>
+                <OrderButton>
+                    <span>Order Here</span>
+                    <ArrowIcon />
+                </OrderButton>
             </TextContainer>
             <ImageContainer>
                 <Image src={salmonSushi} alt="Salmon Sushi" />

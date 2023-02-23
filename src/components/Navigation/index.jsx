@@ -1,6 +1,7 @@
 import styled from "styled-components"
-import { HiOutlineMoon } from "react-icons/hi"
+import {Moon} from "styled-icons/boxicons-regular"
 import logo from "../../assets/images/logo.png"
+
 
 const Navigation = () => {
     return (
@@ -24,7 +25,9 @@ const Navigation = () => {
                         <A href="#recently">Recently</A>
                     </NavItem>
                     <NavItem>
-                        <ThemeToggle />
+                        <ThemeToggle>
+                            <MoonIcon />
+                        </ThemeToggle>
                     </NavItem>
                 </NavItemContainer>
                 <NavMobileMenu>
@@ -101,7 +104,11 @@ const A = styled.a`
     color: var(--clr-dark);
 `
 
-const ThemeToggle = styled(HiOutlineMoon)`
+const ThemeToggle = styled.div``
+
+const MoonIcon = styled(Moon)`
+    width: 1rem;
+    height: 1rem;
     cursor: pointer;
 `
 

@@ -1,32 +1,25 @@
 import styled from "styled-components";
-import onigiri from "../../../assets/images/popular-onigiri.png"
-import springRoll from "../../../assets/images/popular-spring-rols.png"
-import sushiRoll from "../../../assets/images/popular-sushi-rolls.png"
-import {Container as MainContainer, Title, Tagline, Image} from "../../../globalStyles"
+import {ShoppingBag} from "styled-icons/boxicons-regular"
+import {Container as MainContainer, Title, Tagline, Image, Button} from "../../../globalStyles"
+import { PopularData as data } from "../Data";
 
 const Popular = ({id}) => {
-    const popularData = [
-        {name: "Onigiri", desc: "Japanese Dish", price: "$10.99", img: onigiri},
-        {name: "Spring Roll", desc: "Japanese Dish", price: "$10.99", img: springRoll},
-        {name: "Sushi Roll", desc: "Japanese Dish", price: "$10.99", img: sushiRoll},
-    ]
-
        return (
         <Container id={id}>
-            <Title>The Best Food</Title>
-            <Tagline>Popular Dishes</Tagline>
+            <Title>{data.title}</Title>
+            <Tagline>{data.tagline[0]}</Tagline>
             <CardContainer>
-                {popularData.map((popular, i) => (
+                {data.popular.map((item, i) => (
                     <MenuCard key={i}>
                         <ImageContainer>
-                            <MenuImage src={popular.img} alt="Popular product" />
+                            <MenuImage src={item.image} alt="Popular product" />
                         </ImageContainer>
-                        <MenuName>{popular.name}</MenuName>
-                        <MenuDesc>{popular.desc}</MenuDesc>
-                        <MenuPrice>
-                            <span>{popular.price}</span>
-                            <BuyButton></BuyButton>
-                        </MenuPrice>    
+                        <MenuName>{item.name}</MenuName>
+                        <MenuDesc>{item.description}</MenuDesc>
+                        <MenuPrice>{item.price}</MenuPrice>
+                        <ShopButton>
+                            <BagIcon />
+                        </ShopButton>
                     </MenuCard>
                 ))}
             </CardContainer>
@@ -90,9 +83,23 @@ const MenuDesc = styled.p`
 
 const MenuPrice = styled.p`
     margin-bottom: 1.5rem;
+    position: relative;
 `
 
-const BuyButton = styled.button``
+const ShopButton = styled(Button)`
+    width: clamp(1.7rem, 2.5vw, 2rem);
+    height: clamp(1.7rem, 2.5vw, 2rem);
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1rem;
+`
+
+const BagIcon = styled(ShoppingBag)`
+    width: 60%;
+`
 
 
 export default Popular;
