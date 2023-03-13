@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ShoppingBag } from 'styled-icons/boxicons-regular';
 import {
-  Container as MainContainer,
+  SectionContainer,
   Title,
   Tagline,
   Image,
@@ -56,7 +56,7 @@ export default function Popular({ id }) {
   );
 }
 
-const Container = styled(MainContainer)`
+const Container = styled(SectionContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;

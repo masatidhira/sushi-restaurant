@@ -21,7 +21,7 @@ const Container = styled.div`
   width: 100%;
   max-width: var(--max-width);
   margin: auto;
-  padding: var(--nav-height) 2rem;
+  padding: 0;
 `;
 
 export default Homepage;

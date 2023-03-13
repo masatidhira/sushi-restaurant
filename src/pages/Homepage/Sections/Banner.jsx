@@ -1,50 +1,57 @@
 import styled from 'styled-components';
 import { ArrowRight } from 'styled-icons/bootstrap';
-import {
-  Container as MainContainer,
-  Image,
-  Button,
-} from '../../../globalStyles';
+import { Image, Button } from '../../../globalStyles';
 import sushiRolls from '../../../assets/images/home-sushi-rolls.png';
 import sushiTitle from '../../../assets/images/home-sushi-title.png';
 
 export default function Banner({ id }) {
   return (
-    <Container id={id}>
-      <HeadingContainer>
-        <Heading>
-          <H1>Enjoy Delicious</H1>
-          <H1>
-            <HeadingImage src={sushiTitle} alt="sushi" />
-            Sushi Food
-          </H1>
-        </Heading>
-        <Subheading>
-          Enjoy a good dinner with the best
-          <br />
-          dishes in the restaurant and improve
-          <br />
-          your day.
-        </Subheading>
-        <OrderButton>
-          <span>Order Now</span>
-          <ArrowIcon />
-        </OrderButton>
-      </HeadingContainer>
-      <ImageContainer>
-        <Img src={sushiRolls} alt="Sushi rolls" />
-      </ImageContainer>
-    </Container>
+    <Wrapper>
+      <Container id={id}>
+        <HeadingContainer>
+          <Heading>
+            <H1>Enjoy Delicious</H1>
+            <H1>
+              <HeadingImage src={sushiTitle} alt="sushi" />
+              Sushi Food
+            </H1>
+          </Heading>
+          <Subheading>
+            Enjoy a good dinner with the best
+            <br />
+            dishes in the restaurant and improve
+            <br />
+            your day.
+          </Subheading>
+          <OrderButton>
+            <span>Order Now</span>
+            <ArrowIcon />
+          </OrderButton>
+        </HeadingContainer>
+        <ImageContainer>
+          <Img src={sushiRolls} alt="Sushi rolls" />
+        </ImageContainer>
+      </Container>
+    </Wrapper>
   );
 }
 
-const Container = styled(MainContainer)`
+const Wrapper = styled.div`
+  width: 100%;
+  padding: 0 2rem;
+`;
+
+const Container = styled.section`
+  width: 100%;
   height: 100vh;
+  margin: 0;
+  padding: calc(var(--nav-height) * 2) 0;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media (min-width: 768px) {
-    padding-top: 0;
+    padding: 0 2rem;
     justify-content: center;
   }
 `;
@@ -107,7 +114,9 @@ const Img = styled(Image)`
   }
 `;
 
-export const OrderButton = styled(Button)``;
+export const OrderButton = styled(Button)`
+  margin: 0;
+`;
 
 export const ArrowIcon = styled(ArrowRight)`
   width: 1rem;

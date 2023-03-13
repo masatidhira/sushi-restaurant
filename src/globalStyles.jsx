@@ -8,10 +8,10 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Container = styled.section`
+export const SectionContainer = styled.section`
   width: 100%;
-  margin: auto;
-  padding-top: calc(var(--nav-height) * 2);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) * 2) 2rem 0;
   position: relative;
 `;
 
@@ -34,9 +34,17 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.h3`
+  text-align: center;
+  margin-bottom: 1rem;
   font-family: var(--font-handwriting);
   font-size: clamp(1.2rem, 3vw, 1.5rem);
+
+  @media (min-width: 768px) {
+    text-align: unset;
+    margin-bottom: 0;
+  }
 `;
+
 export const TaglineContainer = styled.div`
   margin-bottom: 1rem;
 `;
@@ -44,14 +52,25 @@ export const TaglineContainer = styled.div`
 export const Tagline = styled.p`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: var(--font-heading);
   font-weight: bold;
   font-size: clamp(2rem, 5vw, 2.4rem);
+
+  @media (min-width: 768px) {
+    justify-content: unset;
+  }
 `;
 
 export const Text = styled.p`
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: unset;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -62,10 +81,15 @@ export const Button = styled.button`
   align-items: center;
   gap: 0.5em;
   font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  margin: auto;
   padding: 0.9em;
   border: none;
   border-radius: 5rem;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export default GlobalStyle;

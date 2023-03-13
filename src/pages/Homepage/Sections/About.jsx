@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  Container as MainContainer,
+  SectionContainer,
   TextContainer,
   Title,
   TaglineContainer,
@@ -37,7 +37,7 @@ export default function About({ id }) {
   );
 }
 
-const Container = styled(MainContainer)`
+export const Container = styled(SectionContainer)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {
-  Container as MainContainer,
   TextContainer,
   Title,
   TaglineContainer,
@@ -9,6 +8,7 @@ import {
   ImageContainer,
   Image,
 } from '../../../globalStyles';
+import { Container as AboutContainer } from './About';
 import { ArrowIcon, OrderButton } from './Banner';
 import salmonSushi from '../../../assets/images/recently-salmon-sushi.png';
 
@@ -37,10 +37,6 @@ export default function Recently({ id }) {
   );
 }
 
-const Container = styled(MainContainer)`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+const Container = styled(AboutContainer)`
   flex-wrap: wrap;
-  gap: 1rem;
 `;
