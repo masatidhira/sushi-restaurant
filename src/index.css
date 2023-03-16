@@ -14,6 +14,12 @@
   --font-heading: 'Merriweather', serif;
   --font-text: 'Open Sans', sans-serif;
 
+  --fs-biggest: clamp(2.2rem, 6vw, 4rem);
+  --fs-bigger: clamp(2rem, 5vw, 2.4rem);
+  --fs-big: clamp(1.2rem, 3vw, 1.5rem);
+  --fs-normal: clamp(0.9rem, 3vw, 1rem);
+  --fs-small: clamp(0.8rem, 1vw, 0.9rem);
+
   font-family: var(--font-text);
   line-height: 1.5;
   font-weight: 400;

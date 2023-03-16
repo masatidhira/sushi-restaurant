@@ -68,7 +68,7 @@ const H1 = styled.h1`
   display: flex;
   align-items: center;
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-size: var(--fs-biggest);
   letter-spacing: 1px;
 `;
 
@@ -80,7 +80,7 @@ const HeadingImage = styled.img`
 `;
 
 const Subheading = styled.p`
-  font-size: clamp(0.9rem, 3vw, 1rem);
+  font-size: var(--fs-normal);
   font-weight: normal;
   margin-bottom: 0.8rem;
 `;

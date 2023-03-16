@@ -37,7 +37,7 @@ export const Title = styled.h3`
   text-align: center;
   margin-bottom: 1rem;
   font-family: var(--font-handwriting);
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: var(--fs-big);
 
   @media (min-width: 768px) {
     text-align: unset;
@@ -55,7 +55,7 @@ export const Tagline = styled.p`
   justify-content: center;
   font-family: var(--font-heading);
   font-weight: bold;
-  font-size: clamp(2rem, 5vw, 2.4rem);
+  font-size: var(--fs-bigger);
 
   @media (min-width: 768px) {
     justify-content: unset;
