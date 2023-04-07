@@ -25,10 +25,13 @@ export default function Newslatter({ id }) {
             <Tagline>Subscribe For</Tagline>
             <Tagline>Offer Updates</Tagline>
           </TaglineContainer>
-          <OrderButton>
-            Order Here
-            <ArrowIcon />
-          </OrderButton>
+          <Subscribe>
+            <EmailInput placeholder="Email" />
+            <SubscribeButton>
+              <span>Subscribe</span>
+              <ArrowIcon />
+            </SubscribeButton>
+          </Subscribe>
         </TextContainer>
       </Wrapper>
     </Container>
@@ -59,3 +62,25 @@ const Wrapper = styled(AboutContainer)`
 const Img = styled(Image)`
   width: 85%;
 `;
+
+const Subscribe = styled.div`
+  background-color: var(--clr-light);
+  border-radius: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: auto; */
+  padding: 0.4rem 0.4rem 0.4rem 0.6rem;
+`;
+
+const EmailInput = styled.input`
+  outline: none;
+  border: none;
+  background-color: var(--clr-light);
+  width: 60%;
+  font-size: var(--font-text);
+  padding: 0.2rem;
+  margin: 0 0.8rem;
+`;
+
+const SubscribeButton = styled(OrderButton)``;

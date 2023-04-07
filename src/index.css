@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 :root {
-  --nav-height: 3rem;
+  --nav-height: 4rem;
   --max-width: 1080px;
 
   --clr-dark: #2b2b2b;

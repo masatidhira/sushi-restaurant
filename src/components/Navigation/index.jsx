@@ -1,8 +1,25 @@
-import styled from 'styled-components';
-import { Moon } from 'styled-icons/boxicons-regular';
 import logo from '../../assets/images/logo.png';
+import {
+  Header,
+  NavContainer,
+  Logo,
+  LogoImage,
+  NavItemContainer,
+  NavMobileMenu,
+  NavItem,
+  Anchor,
+  ThemeToggle,
+  MoonIcon,
+} from './NavigationElements';
 
 export default function Navigation() {
+  const handleNavClick = (event) => {
+    event.preventDefault();
+    document.querySelector(event.target.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <Header>
       <NavContainer>
@@ -12,16 +29,24 @@ export default function Navigation() {
         </Logo>
         <NavItemContainer>
           <NavItem>
-            <A href="#home">Home</A>
+            <Anchor href="#banner" onClick={(e) => handleNavClick(e)}>
+              Home
+            </Anchor>
           </NavItem>
           <NavItem>
-            <A href="#about">About Us</A>
+            <Anchor href="#about" onClick={(e) => handleNavClick(e)}>
+              About Us
+            </Anchor>
           </NavItem>
           <NavItem>
-            <A href="#popular">Popular</A>
+            <Anchor href="#popular" onClick={(e) => handleNavClick(e)}>
+              Popular
+            </Anchor>
           </NavItem>
           <NavItem>
-            <A href="#recently">Recently</A>
+            <Anchor href="#recently" onClick={(e) => handleNavClick(e)}>
+              Recently
+            </Anchor>
           </NavItem>
           <NavItem>
             <ThemeToggle>
@@ -37,76 +62,3 @@ export default function Navigation() {
     </Header>
   );
 }
-
-const Header = styled.header`
-  background-color: var(--clr-light);
-  width: 100%;
-  height: var(--nav-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-`;
-
-const NavContainer = styled.nav`
-  width: 100%;
-  height: 100%;
-  max-width: 1080px;
-  margin: auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const LogoImage = styled.img`
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-right: 6px;
-  object-fit: contain;
-  object-position: center;
-`;
-
-const NavItemContainer = styled.ul`
-  display: none;
-
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-  }
-`;
-
-const NavMobileMenu = styled.button`
-  background: none;
-  border: none;
-  font-size: 0.7rem;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavItem = styled.li`
-  list-style: none;
-  margin: 0 0.7rem;
-  display: flex;
-`;
-const A = styled.a`
-  padding: 0.5rem;
-  text-decoration: none;
-  color: var(--clr-dark);
-`;
-
-const ThemeToggle = styled.div``;
-
-const MoonIcon = styled(Moon)`
-  width: 1rem;
-  height: 1rem;
-  cursor: pointer;
-`;
